@@ -6,3 +6,4 @@ index of content
 2. the usage of double underscore (dunder) -- doubleUnderscore.py
 3. Python built-in types -- PythonType.py
 4. Index -- indexPython.py
+5. lambda function -- lambdaPython.py
