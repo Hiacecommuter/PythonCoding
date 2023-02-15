@@ -29,12 +29,36 @@ The + tool will match one or more repetitions of character/character class/group
   \d+ : It will match any digit  or more times.
 The $ boundary matcher matches an occurrence of a character/character class/group
 \b assert position at a word boundary.
-
 Three different positions qualify for word boundaries :
     Before the first character in the string, if the first character is a word character.
     Between two characters in the string, where one is a word character and the other is not a word character.
     After the last character in the string, if the last character is a word character
+() capture the group
+(?:) not capture the group
 """
 Regex_Pattern = r"\d\d\D\d\d\D\d\d\d\d"	# Do not delete 'r'.
 
 print(str(bool(re.search(Regex_Pattern, input()))).lower())
+
+"""
+The findall() function returns a list containing all matches.
+The list contains the matches in the order they are found.
+If no matches are found, an empty list is returned
+
+The search() function searches the string for a match, and returns a Match object if there is a match.
+If there is more than one match, only the first occurrence of the match will be returned
+If no matches are found, the value None is returned
+
+The split() function returns a list where the string has been split at each match
+You can control the number of occurrences by specifying the maxsplit parameter
+
+The sub() function replaces the matches with the text of your choice
+You can control the number of replacements by specifying the count parameter
+
+A Match Object is an object containing information about the search and the result.
+If there is no match, the value None will be returned, instead of the Match Object.
+.span() returns a tuple containing the start-, and end positions of the match.
+.string returns the string passed into the function
+.group() returns the part of the string where there was a match
+
+"""
