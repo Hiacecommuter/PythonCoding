@@ -51,6 +51,11 @@ Three different positions qualify for word boundaries :
  
 \number match the th group
   r'^([a-z])(\w)(\s)(\W)(\d)(\D)([A-Z])([A-Za-z])([aeiouAEIOU])(\S)\1\2\3\4\5\6\7\8\9\10$'
+  
+Backreference
+    (b)?o\1  or (b?)o\1  \1only match is the referenced matached. 
+    12-45-7810 later hyphen match depends on the first one, if the first one appears, the rest must match, vice versa. 
+
 """
 Regex_Pattern = r"\d\d\D\d\d\D\d\d\d\d"	# Do not delete 'r'.
 
