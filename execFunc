@@ -1,0 +1,66 @@
+"""
+exec can dynamically generate code.
+run code from a string input
+"""
+
+#1. exec return None. Thus a variable is necessary to store any results.
+#2. use semicolons to separate mulitple statements in one line
+name = input(); print(f'Hello, {name}!')
+#   use \nto aggregate muliple statements into a single line
+exec("name = input()\nprint(f'Hello, {name}!')")
+
+#3. use triple quoted strings (proper indentation)
+#   SyntaxError is raised if there is any
+code = """
+numbers = [2, 3, 7, 4, 8]
+
+def is_even(number):
+  return number % 2 == 0
+
+even_numbers = [number for number in numbers if is_even(number)]
+squares = [number**2 for number in even_numbers]
+result = sum(squares)
+print("Original data:", numbers)
+print("Even numbers:", even_numbers)
+print("Square values:", squares)
+print("Sum of squares:", result)
+"""
+exec(code)
+
+#4. Executing compiled code
+compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
+
+string_input = """
+def sum_of_even_squares(numbers):
+    return sum(number**2 for number in numbers if number % 2 == 0)
+print(sum_of_even_squares(numbers))
+"""
+
+compiled_code = compile(string_input, "<string>", "exec")
+exec(compiled_code)
+
+numbers = [2, 3, 7, 4, 8]
+exec(compiled_code)
+
+numbers = [5, 3, 9, 6, 1]
+exec(compiled_code)
+'''
+Compiling often-repeated code up front with compile() can help you slightly improve your code’s performance by skipping the parsing and bytecode compilation steps on each call to exec().
+'''
+#5. Running code from python source files
+#   use open() to read .py files as a string, then pass to exec()
+# hello.py
+
+print("Hello, Pythonista!")
+print("Welcome to Real Python!")
+def greet(name="World"):
+    print(f"Hello, {name}!")
+
+with open("hello.py", mode="r", encoding="utf-8") as hello:
+    code = hello.read()
+exec(code)
+greet()
+greet("Pythonista")
+
+#6. exec uses names and objects in current scope
+#https://realpython.com/python-exec/#uncovering-and-minimizing-the-security-risks-behind-exec
