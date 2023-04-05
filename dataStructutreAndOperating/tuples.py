@@ -29,11 +29,14 @@ thistuple = tuple(("apple", "banana", "cherry"))
 thistuple = ("apple", "banana", "cherry")
 thistuple[1]
 
-# tuple is unchangeable, but they can be appended 
-thistuple = ("apple", "banana", "cherry")
-y = list(thistuple)
-y.append("orange")
-thistuple = tuple(y)
+# tuple is unchangeable, but they can be combined
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+tuple3 = tuple1 + tuple2
+
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+
 
 #unpack tuple
 fruits = ("apple", "banana", "cherry")
@@ -46,3 +49,7 @@ fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
 
 fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
 (green, *tropic, red) = fruits
+
+#methods
+tuple.count()
+tuple.index()
