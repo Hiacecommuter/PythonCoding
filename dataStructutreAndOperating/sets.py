@@ -41,3 +41,4 @@ thisset.clear() #clear elements
 del thisset  # delete the variable
 
 #methods
+#union() intersection(), difference(), add(), 
