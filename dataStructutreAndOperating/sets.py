@@ -41,4 +41,5 @@ thisset.clear() #clear elements
 del thisset  # delete the variable
 
 #methods
-#union() intersection(), difference(), add(), symmetric_difference() both non common
+#not change set itself, union() intersection(), difference(), add(), symmetric_difference() both non common
+#change the set, update(), intersection_update(), difference_update(), symmetric_difference_update()
