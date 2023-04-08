@@ -11,4 +11,6 @@ import itertools
 #Combinatoric generators
 # product(), permutations(), combinations(), combinations_with_replacement()
 
+#returns are itertools object containing tuples
+
 #https://docs.python.org/3.10/library/itertools.html#itertools.product
