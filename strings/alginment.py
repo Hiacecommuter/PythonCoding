@@ -13,7 +13,7 @@ print("Hack".center(width,"-")) # --Hack--
 
 # change one character in string
 
-# str.capitalize()
+# str.capitalize(), only the first character in the string
 
 # str.find() 
 #This gives us the first index during a left to right scan. If the string is not found, it returns -1
