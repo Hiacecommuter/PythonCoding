@@ -9,3 +9,4 @@ index of content
 5. lambda function -- lambdaPython.py
 6. Python double underscore -- 
 7. stdin, stdout, stderr --
+...
