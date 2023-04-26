@@ -1,0 +1,41 @@
+"""
+iterables vs iterators
+iterables typcially hold data
+iterators control the iteration process
+"""
+
+"""
+iterator protoca
+.__iter__()   call to initialize the iterator. It must return an itertable object
+.__next__()   call to iterate over the iterator. It must return the next value in the data stream
+"""
+
+class SequenceIterator:
+    def __init__(self, sequence):
+        self._sequence = sequence   # private attribute
+        self._index = 0             # private attribute
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._index < len(self._sequence):
+            item = self._sequence[self._index]
+            self._index += 1
+            return item
+        else:
+            raise StopIteration
+            
+sequence = SequenceIterator([1, 2, 3, 4])
+
+# Get an iterator over the data
+iterator = sequence.__iter__()
+while True:
+  try:
+    # Retrieve the next item
+    item = iterator.__next__()
+  except StopIteration:
+    break
+  else:
+    # The loop's code block goes here...
+    print(item)            
