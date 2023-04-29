@@ -68,6 +68,7 @@ importlib.reload(mod)
 
 """Packages
 Packages allow for a hierarchical structuring of the module namespace using dot notation
+Technically, a package is a Python module with an __path__ attribute
 """
 """
 pkg contains mod1.py, mod2.py
