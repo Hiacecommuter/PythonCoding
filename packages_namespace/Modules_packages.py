@@ -78,6 +78,9 @@ from pkg.mod1 import foo
 import pkg  # import package
 
 """Package initialization
+To create a Python package yourself, you create a directory and a file named __init__.py inside it.
+The __init__.py file contains the contents of the package when it’s treated as a module. 
+It can be left empty.
 If a file named __init__.py is present in a package directory, it is invoked when the package or a module in the package is imported.
 """
 print(f'Invoking __init__.py for {__name__}')   # __init__.py
