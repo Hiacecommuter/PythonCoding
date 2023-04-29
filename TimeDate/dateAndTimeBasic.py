@@ -17,6 +17,7 @@ datetime provides three classes
  2 - datetime.time is an idealized time that assumes there are 86.400 seconds perday with no leap seconds.
      This object stores the hour, minute, second, microsecond, and tzinfo (time zone information)
  3 - datetime.datetime is a combination of a date and a time. It has all the attributes of boht classes.
+ """
  
 from datetime import date, time, datetime
 
