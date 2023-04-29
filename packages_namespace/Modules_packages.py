@@ -1,19 +1,42 @@
 """
-Modular programmingrefers to the process of breaking a large, unwieldy programming task into separate, smaller, more manageable subtasks or modules.
+Modular programming
+    --  refers to the process of breaking a large, unwieldy programming task into separate, smaller, more manageable subtasks or modules.
+
 three different ways to define a module in Python:
   -- A module can be written in Python itself.
   -- A module can be written in C and loaded dynamically at run-time, like the re (regular expression) module.
   -- A built-in module is intrinsically contained in the interpreter, like the itertools module.
+
+Packages
+    -- packages contains modules
+    -- Packages allow for a hierarchical structuring of the module namespace using dot notation
+
+Benefits for modularizing
+  simplicity, maintainability, resusability, scoping
   """
 
 """The module Search Path
+When interpreteer executes import statement, it searches for module_name.py in a list of directories assembled from
+    -- The directory from which the input script was run or the current directory if the interpreter is being run interactively
+    -- The list of directories contained in the PYTHONPATH environment variable, if it is set
+    -- An installation-dependent list of directories configured at the time Python is installed
 """
 import sys
+sys.path # the resulting search path
+
+"""
+if module file is in arbitrary directory, can modity sys.path at run time
+"""
+sys.path.append(r'C:\Users\john')
 sys.path
+
+#check module location
+mod.__file__
 
 """import
 Each module has its own private symbol table, which serves as the global symbol table for all objects defined in the module.
 Thus, a module creates a separate namespace
+import only put module_name is the caller's symbol table
 """
 
 """from <module_name> import <name(s)> --Because this form of import places the object names directly into the caller’s symbol table, any objects that already exist with the same name will be overwritten
@@ -33,17 +56,21 @@ dir(mod)  # lists the names defined in the module
 """
 Modules are often designed with the capability to run as a standalone script for purposes of testing the functionality that is contained within the module. This is referred to as unit testing
 """
-
+__name__
 """
+Module initialization only executred when first time a module is imported
 If you make a change to a module and need to reload it, you need to either restart the interpreter or use a function called reload() from module importlib:
 """
-import mod
-import mod
+import mod      # __init__.py
+import mod    # no initalization called, 
 import importlib
 importlib.reload(mod)
 
 """Packages
 Packages allow for a hierarchical structuring of the module namespace using dot notation
+"""
+"""
+pkg contains mod1.py, mod2.py
 """
 import pkg.mod1, pkg.mod2 # pkg directory has mod1.py and mod2.py
 from pkg.mod1 import foo
@@ -76,7 +103,7 @@ __all__ = [
 
 """
 _all__ can be defined in a module as well and serves the same purpose: to control what is imported with import *.
-__all__ = ['foo']  
+__all__ = ['foo']  # this is in the module py file
 
 def foo():
     print('[mod1] foo()')
