@@ -16,7 +16,7 @@ class Circle:
     @radius.setter    
     def radius(self, value):
         """Set radius, raise error if negative"""
-        if value >= 0:
+        if value >= 0 and isinstance(value, int | float) :
             self._radius = value
         else:
             raise ValueError("Radius must be positive")
