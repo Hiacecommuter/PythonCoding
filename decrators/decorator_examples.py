@@ -17,7 +17,7 @@ def test1():
   return add
   
 func = test1()
-print(func(1,2)
+print(func(1,2))
 
 """ Simply decorator
 decorators wrap a function, modifying its behavior.
@@ -33,7 +33,7 @@ def say_whee():
     print("Whee!")
 
 say_whee = my_decorator(say_whee)   # say_whee points to the inner function wrapper
-
+print(say_whee.__name__) 
 """ a simple way to use decorator
 @ to outer layer function
 """
@@ -48,3 +48,4 @@ def my_decorator(func):
 @my_decorator
 def say_whee():
     print("Whee!")
+print(say_whee.__name__)  # wrapper
