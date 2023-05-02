@@ -35,7 +35,7 @@ def say_whee():
 say_whee = my_decorator(say_whee)   # say_whee points to the inner function wrapper
 
 """ a simple way to use decorator
-@
+@ to outer layer function
 """
 
 def my_decorator(func):
