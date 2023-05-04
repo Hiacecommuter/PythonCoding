@@ -39,3 +39,6 @@ sorted_list = sorted(participant_list, key=sorter)
 sorted_list = sorted(participant_list, key=lambda item: (100-item[1], item[2]))
 
 #https://www.programiz.com/python-programming/methods/built-in/sorted
+
+string = "cab"
+print(sorted(string))   # ['a', 'b', 'c']
