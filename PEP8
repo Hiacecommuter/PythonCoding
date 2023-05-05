@@ -1,0 +1,37 @@
+Name Conventions
+use descriptive names
+1. Never use l, o, or I single letter names as these can be mistaken for 1 and 0
+2. function   lowercase words separated by _    --    my_function or function
+3. variables  lowercase words separated by _ 
+4. class      Start each word with a capital letter  --   Model, MyClass
+5. method     lowercase words separated by _
+6. constant   UPPERCASE WORDS separated by _
+7. Module     lowercase words separated by _
+8. package    lowercase words no separator
+
+Code Layout
+1. Surround top-level functions and classes with two blank lines
+2. Surround method definitions inside classes with a single blank line
+3. Use blank lines sparingly inside functions to show clear steps
+
+Maximum Line length and Line Breaking
+1. 79 characters limit
+2. Python will assume line continuation if code is contained within parentheses, brackets, or braces
+3. If it is impossible to use implied continuation, then you can use backslashes to break lines instead
+
+Indentation
+1. Use 4 consecutive spaces to indicate indentation
+2. Prefer spaces over tabs
+3. Align parameters inside parenthesis
+4. Add comment for condition
+
+Comments
+1. Indent block comments to the same level as the code they describe
+2. Start each line with a # followed by a single space
+3. Separate paragraphs by a line containing a single #
+
+Whitespace in Experssions and Statements
+1. A single space on either side ( =, +=, -=, ==, !=, <=, >=, <, >, and, or, not,...)
+2. No spaces when assign a default value to a function
+3. Only add space for the lowest priority operations if there are multiple operators
+
