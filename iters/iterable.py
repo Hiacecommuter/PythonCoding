@@ -24,3 +24,7 @@ from sequence_iterable import Iterable
 
 for value in Iterable([1, 2, 3, 4]):
     print(value)      
+
+""" unpack iterable
+*iterable
+"""
