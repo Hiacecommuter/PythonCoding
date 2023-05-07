@@ -81,4 +81,8 @@ class SequenceIterator(Iterator):
 for number in SequenceIterator([1, 2, 3, 4]):
    print(number)
 
-
+"""
+It’s important to note that .__iter__() is semantically different for iterables and iterators. 
+In iterators, the method returns the iterator itself, which must implement a .__next__() method. 
+In iterables, the method should yield items on demand.
+"""
