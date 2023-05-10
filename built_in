@@ -1,0 +1,16 @@
+https://docs.python.org/3/library/functions.html#max
+
+sum(iterable, /, start=0)
+A slash in the argument list of a function denotes that 
+the parameters prior to it are positional only.
+e.g. divmod(a, b, /) invalid divmod(a=2, b=3, /)
+
+max(iterable, *, key=None)
+max(iterable, *, default, key=None)
+max(arg1, arg2, *args, key=None)
+min(iterable, *, key=None)
+min(iterable, *, default, key=None)
+min(arg1, arg2, *args, key=None)
+A bare * means the arguments following it are keyword-only(counterpart to positional only)
+
+pow(base, exp, mod=None)
