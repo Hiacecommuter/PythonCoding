@@ -1,0 +1,39 @@
+1. Running pip as a module
+    pip install ... do not specify the version of python
+    Python(version) -m pip install ... remove the ambiguity
+    
+2. Create and active venv in Window
+    Python -m venv venv
+    venv\Scripts\activate
+    deactivate
+    
+3. Reinstall pip
+    Python -m ensurepip --upgrade
+    or  Python get-pip.py 
+    
+4. install multiple packages in a single line
+   install from specific URL
+   insta
+
+5. pip list, show version (__version__)
+
+6. show package dependency
+    Python -m pip show requests   then show dependency for each dependent packages before uninstall
+
+7. Uninstall
+    Python -m pip uninstall urllib3 -y
+    python -m pip uninstall -y charset-normalizer idna requests
+    
+8. Requirement file
+    Python -m pip freeze > requirements.txt
+    Python -m pip install -r requirements.txt
+    ==, >= , < version
+    
+9. Seperate dev and production
+    python -m pip install -r requirements_dev.txt
+    -r requirements.txt \n    pytest>=x.y.z   # requirements_dev.txt
+    Python -m pip install -r requirements.txt
+
+10. venv and virtualev
+
+11. A python virtual environment is a folder structure
