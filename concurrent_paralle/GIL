@@ -1,0 +1,32 @@
+Global Interpreter Lock (Only for Cpython)
+  GIL allows only one thread to hold the control of the Python interpreter at any point
+  
+Reference counting
+  ojects created in Python have a refcount variable that keeps track of the number of reference
+  pointing to the objects
+  When refcount reaches 0, the memory occupied by the oject is released
+  
+  import sys
+  sys.getrefcount()
+  
+Race condition
+  - multiple threads increase or decrease same object's value simultaneously, 
+    causing leaked memory, wrong values, incorrectly releasing memory
+    
+  Refcount variable needs protection from race conditions
+  
+Deadlock
+  more than one lock exists
+  attempt to acuqire other lock while holding a lock
+ 
+GIL is a single lock on the interpreter
+  - prevent race conditions
+  - prevent deadlock
+  
+Multi-processing
+  - each process gets its own Python interpreter and memory space 
+  
+Alternative Python interpreters
+    
+  
+ 
