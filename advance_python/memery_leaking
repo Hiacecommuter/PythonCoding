@@ -1,0 +1,29 @@
+Static vs Dynamic memory allocation
+  static memory allocation 
+    - allocated before program starts and last as long as the program runs
+    - variables are stored in the stack memory
+    - memory that has been allocated cannot be reused, thus no memory reuse
+    
+   dynamic memory allocation
+    - allocated at runtime
+    - variables are stored in the heap memory
+    - memory that has been allocated can be released and reused
+    
+All methods and their variables are stored in the stack.
+Stack memory is fast
+
+All objects and instance variables are stored in the heap.
+
+CPython memory
+  - https://realpython.com/python-memory-management/
+  - Arena -> Pool -> Block  
+  
+ 
+
+# cyclic dependency 
+a1 = ['a', 'b']
+a2 = [ 1, 2]
+a1.append(a2)
+a2.append(a1)
+del a1
+del a2
