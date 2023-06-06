@@ -1,0 +1,47 @@
+import logging
+
+5 standard levels indicating the severity of events
+  logging.DEBUG
+  logging.INFO
+  logging.WARNING
+  logging.ERROR
+  logging.CRITICAL
+  
+Output info (only display setting level and above)
+  logging.debug("This is a debug message")
+  logging.info("This is a info message")
+  logging.error("message")
+  logging.critical("message")
+  
+Config
+  basciConfig(**kwargs)
+  level: 
+  filename: the log file
+  filemode: default is 'a'
+  format: format of the log message
+  
+Formatting the output
+  - time %(asctime)s
+  - message %(message)s
+  - date datefmt='%d-%b-%y %H:%M:%S'
+  - ID %(process)d
+  https://docs.python.org/3/library/logging.html#logrecord-attributes
+
+Logging Variable Data
+  name = 'John'
+  logging.error('%s raised an error', name)
+  logging.error(f'{name} raised an error')
+  
+Capturing Stack Traces
+  a = 5
+  b = 0
+  
+  try:
+    c = a / b
+  except Exception as e:
+    logging.error("Exception occurred", exc_info=True)
+    or logging.exception("Exception occurred")
+  
+Create multiple logger objects
+
+https://realpython.com/python-logging/#classes-and-functions
