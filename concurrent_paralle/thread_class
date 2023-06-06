@@ -1,0 +1,35 @@
+import threading
+import time
+
+class GetHtml(threading.Thread):
+  def __init__(self, name):
+    super().__init__(name=name)
+    
+   def run(self):
+    print("getting html starts")
+    time.sleep(2)
+    print("getting html ends")
+    
+    
+class GetUrl(threading.Thread):
+  def __init__(self, name):
+    super().__init__(name=name)
+    
+  def run(self):
+    print("getting url starts")
+    time.sleep(4)
+    print("getting url ends")
+    
+if __name__ == "__main__":
+  thread1 = GetHtml("get html")
+  thread2 = GetUrl("get url")
+  
+  start_time = time.time()
+  thread1.start()
+  thread2.start()
+  
+  thread1.join()
+  thread2.join()
+  print(time.time() - start.time)
+  
+  
