@@ -1,0 +1,41 @@
+One thread
+  import threading
+  import time
+  
+  def thread_func(name):
+    time.sleep(2)
+    print(f"{name} is done")
+    
+  if __name__ == "__main__":
+    thrd1 = threading.Thread(target = thread_func, args=(1,))
+    thrd1.start()
+    
+Daemon threads
+    A daemon is a process that runs in the background
+    x = threading.Thread(target=thread_function, args=(1,), daemon=True)  # not wait thread before close main thread
+    
+join a thread
+    x.join() # main thread waits x before main thread finishes
+    
+Manually start many threads
+    
+ThreadPoolExecutor
+    import concurrent.futures
+    if __name__ == "__main__":
+      with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        executor.map(thread_function, range(3))
+     - auto join()
+     
+dis module
+    import dis
+    def inc(x):
+      x+=1
+     dis.dis(inc)
+     
+lock and deadlock
+    import threading
+    lk = threading.Lock()
+    lk.acquire()
+    lk.release()
+    
+
