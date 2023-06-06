@@ -1,0 +1,32 @@
+CPython does garbage collection automatically when a refcount decreases to 0
+
+Reference Cycle
+  - an object references itself
+  - two objects reference each other
+    del object cannot remove reference cycle
+
+Generational garbage collection
+  generation-based classification
+  - it classifies objects in code into three generations
+  - Each object starts out at the first generation and moves to higher generations each time it survives
+    a garbage collection step
+  - lower generations are collected more often
+  - it can detect reference cycle
+
+gc module
+  import gc
+  ...
+  collected = gc.collect()
+  print(collected) //nums for collected objects
+  ...
+  
+Garbage collection threshold
+    gc.get_threshold() // first, second, third generation
+    gc.get_count()
+    get.set_threshold(int, int, int)
+    
+Application Performance Monitoring (APM) Tools
+
+
+Note:
+    string add vs string format
