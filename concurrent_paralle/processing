@@ -1,0 +1,49 @@
+data in multiple processing is isolated
+
+1. os.fork()
+  import os
+  import time
+
+  print("start program")
+  pid = os.fork() //linux env only, process run all code below fork separately
+
+  if pid == 0:
+    print("forked process")
+  else: 
+    print("main process")
+
+
+2. multiple processing
+  import multiprocessing
+  import time
+  def get_html(n):
+    time.sleep(n)
+    return n
+    
+   if __name__ == "__main__":
+      prog = multiprocessing.Process(target= get_html, args=(2,))
+      print(progess.pid)  # None
+      prog.start()
+      print(progess.pid)
+      prog.join()
+      print("main progess ends")
+      
+      #or
+     class progs(multiprocessing)
+     def run():
+      pass
+      
+3. multiple processing pool
+    pool = multiprocessing.Pool(multiprocessing.cpu_count())
+    result = pool.apply_async(get_html, args=(3,))
+    pool.close() # close pool, no longer accept task
+    pool.join()
+    print(result.get())
+    
+4. pool.imap
+  for result in pool.imap(get_html, [1,5,3]:
+    print(result)
+  for result in pool.imap_unordered(get_html, [1,5,3]:
+    print(result)
+      
+  
