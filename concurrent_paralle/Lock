@@ -1,0 +1,9 @@
+threading.Semaphore
+  - A counter for lock, it is atomic ( guarantee operating system will not swap out the thread in
+  middle of inc or dec the counter
+  - incremented when .release()
+  - decremented when .acquire()
+  
+ threading.timer(X, function)
+  - function starts X seconds later after start()
+    
