@@ -1,2 +1,5 @@
 sorted() # sorted(iterable, /, *, key=None, reverse=False)
 sort()
+
+use multiple key
+sorted(arr, key = lambda x:(x[0], x[1]))
