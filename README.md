@@ -1,2 +1,1 @@
-# PythonCoding
-python Coding syntax and knowledge
+This repo is for recording python program syntax and knowledge
