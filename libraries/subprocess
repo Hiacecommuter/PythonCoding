@@ -1,0 +1,49 @@
+#use run to start a python script
+
+import subprocess
+completed_process = subprocess.run(["python", "programName", "args"], 
+                      check, # raise exception or not for the subprocess
+                      timeout, # set time limit for subprocess
+                      shell, # use shell, unix
+                      capture_output, # get output, same as set stdout=subprocess.PIPE, 
+                                      # stder=subprocess.PIPE
+                      encoding, # 
+                      input, # input data
+                      )
+completed_process.stdout  
+
+
+#The capacity of pipe buffer is limited. Use a file object to increase capacity
+
+from tempfile import TemporaryFile
+with TemporaryFile() as f:
+  ls_process = subprocess.run(['python', 'programName'], stdout=f)
+    f.seek(0)
+    f.read().decode('utf-8')
+
+
+#connect two processes by run
+ls_process = subprocess.run(['ls', '/usr/bin/'], stdout=subprocess.PIPE)
+grep_process = subprocess.run(['grep', 'python'], 
+                              input=ls_process.stdout, stdout=subprocess.PIPE)
+grep_process.stdout.decode('utf-8')                              
+
+from tempfile import TemporaryFile
+with TemporaryFile() as f:
+    ls_process = subprocess.run(["ls", "/usr/bin"], stdout=f)
+    f.seek(0)
+    grep_process = subprocess.run(
+        ["grep", "python"], stdin=f, stdout=subprocess.PIPE
+    )
+
+
+# Popen    
+
+with subprocess.Popen(
+  ['python', 'programName'], stdout=subprocess.
+) as process:
+  pocesss.poll()  # check the process finish running or not
+  process.stdin.write('content_in')
+  process.stdin.flush()
+  stdout, stderr = process.communicate(input='content')
+  print(stdout.decode('uft-8'))
